@@ -28,7 +28,7 @@ public class UserService {
     }
 
     public void updateUser(User user){
-        User currentUser=userRepository3.findByUserName(user.getUserName());
+        User currentUser=userRepository3.findByUsername(user.getUserName());
         currentUser.setUserName(user.getUserName());
         currentUser.setFirstName(user.getFirstName());
         currentUser.setLastName(user.getLastName());
@@ -39,6 +39,6 @@ public class UserService {
     }
 
     public User findUserByUsername(String username){
-        return userRepository3.findByUserName(username);
+        return userRepository3.findByUsername(username);
     }
 }
