@@ -28,8 +28,8 @@ public class UserService {
     }
 
     public void updateUser(User user){
-        User currentUser=userRepository3.findByUsername(user.getUserName());
-        currentUser.setUserName(user.getUserName());
+        User currentUser=userRepository3.findByUsername(user.getUsername());
+        currentUser.setUsername(user.getUsername());
         currentUser.setFirstName(user.getFirstName());
         currentUser.setLastName(user.getLastName());
         currentUser.setPassword(user.getPassword());
