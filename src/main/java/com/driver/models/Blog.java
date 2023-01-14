@@ -20,8 +20,6 @@ public class Blog {
 
     private String content;
 
-    @CreationTimestamp
-    @Temporal(TemporalType.DATE)
     private Date pubDate;
 
     @ManyToOne
