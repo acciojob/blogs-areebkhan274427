@@ -55,8 +55,6 @@ public class BlogService {
         //find a blog
         return blogRepository1.findById(blogId).get();
 
-
-
     }
 
     public void addImage(Integer blogId, String description, String dimensions){
