@@ -24,6 +24,7 @@ public class ImageService {
         if(blogRepository.findById(blog.getId()).isPresent())
           blog1=blogRepository.findById(blog.getId()).get();
         else return null;
+
         image.setBlog(blog1);
 
         List<Image> imageList=blog1.getImageList();
