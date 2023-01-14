@@ -37,6 +37,7 @@ public class UserService {
 
         userRepository3.save(currentUser);
     }
+        userRepository3.save(user);
 
     }
 
