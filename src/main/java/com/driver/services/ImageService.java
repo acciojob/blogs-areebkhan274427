@@ -35,10 +35,10 @@ public class ImageService {
         return image;
     }
 
-    public void deleteImage(int id){
-        if(imageRepository2.findById(id).isPresent())
+    public void deleteImage(Image image){
+        if(imageRepository2.findById(image.getId()).isPresent())
         {
-            imageRepository2.deleteById(id);
+            imageRepository2.deleteById(image.getId());
         }
 
     }
@@ -47,15 +47,15 @@ public class ImageService {
         return null;
     }
 
-    public int countImagesInScreen(int id, String screenDimensions) {
+    public int countImagesInScreen(Image image, String screenDimensions) {
         //Find the number of images of given dimensions that can fit in a screen having `screenDimensions`
-        Image image=new Image();
-        if(imageRepository2.findById(id).isPresent())
-          image=imageRepository2.findById(id).get();
+        Image image1=new Image();
+        if(imageRepository2.findById(image.getId()).isPresent())
+            image1=imageRepository2.findById(image.getId()).get();
         else
             return 0;
 
-        String imageSize=image.getDimensions();
+        String imageSize=image1.getDimensions();
 
 
 
