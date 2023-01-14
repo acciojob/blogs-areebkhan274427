@@ -17,16 +17,28 @@ public class UserService {
     BlogService blogService3;
 
     public void createUser(User user){
-    }
-
-    public void deleteUser(int userId){
-    }
-
-    public void updateUser(User user){
         userRepository3.save(user);
     }
 
+    public void deleteUser(int userId){
+        if(userRepository3.findById(userId).isPresent())
+        {
+            userRepository3.deleteById(userId);
+        }
+    }
+
+    public void updateUser(User user){
+        User currentUser=userRepository3.findByUserName(user.getUserName());
+        currentUser.setUserName(user.getUserName());
+        currentUser.setFirstName(user.getFirstName());
+        currentUser.setLastName(user.getLastName());
+        currentUser.setPassword(user.getPassword());
+
+        userRepository3.save(currentUser);
+
+    }
+
     public User findUserByUsername(String username){
-        return userRepository3.findByUsername(username);
+        return userRepository3.findByUserName(username);
     }
 }

@@ -1,29 +1,17 @@
-package com.driver.models;
+package com.driver.Dtos;
 
-import javax.persistence.*;
-
-@Entity
-@Table
-public class Image{
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+public class ImageResponseDto {
 
     private String description;
 
     private String dimensions;
 
-    @ManyToOne
-    @JoinColumn
-    private Blog blog;
+    private int blogId;
 
-    public Image(String description, String dimensions) {
+    public ImageResponseDto(String description, String dimensions, int blogId) {
         this.description = description;
         this.dimensions = dimensions;
-    }
-
-    public Image() {
+        this.blogId = blogId;
     }
 
     public String getDescription() {
@@ -42,11 +30,11 @@ public class Image{
         this.dimensions = dimensions;
     }
 
-    public Blog getBlog() {
-        return blog;
+    public int getBlogId() {
+        return blogId;
     }
 
-    public void setBlog(Blog blog) {
-        this.blog = blog;
+    public void setBlogId(int blogId) {
+        this.blogId = blogId;
     }
 }
