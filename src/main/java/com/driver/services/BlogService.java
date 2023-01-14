@@ -26,7 +26,8 @@ public class BlogService {
 
     public List<Blog> showBlogs(){
         //find all blogs
-        return null;
+        List<Blog> blogList=blogRepository1.findAll();
+        return blogList;
 
     }
 
@@ -52,8 +53,10 @@ public class BlogService {
 
     public Blog findBlogById(int blogId){
         //find a blog
+        return blogRepository1.findById(blogId).get();
 
-        return null;
+
+
     }
 
     public void addImage(Integer blogId, String description, String dimensions){
