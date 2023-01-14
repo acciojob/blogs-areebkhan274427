@@ -17,6 +17,7 @@ public class UserService {
     BlogService blogService3;
 
     public void createUser(User user){
+
         userRepository3.save(user);
     }
 
